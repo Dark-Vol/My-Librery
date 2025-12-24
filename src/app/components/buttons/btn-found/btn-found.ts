@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-btn-found',
   imports: [],
   templateUrl: './btn-found.html',
-  styleUrl: './btn-found.css',
+  styleUrl: './btn-found.scss',
 })
 export class BtnFound {
 
