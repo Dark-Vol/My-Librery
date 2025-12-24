@@ -2,14 +2,15 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "7b0fb02e-030b-42ad-9e73-b4ed9c3cd80b"
   },
   "newProjectRoot": "projects",
   "projects": {
     "my-librery": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
+        "@schematics/angular:components": {
           "style": "scss"
         }
       },
