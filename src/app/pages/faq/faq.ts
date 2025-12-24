@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-faq',
   imports: [],
   templateUrl: './faq.html',
-  styleUrl: './faq.css',
+  styleUrl: './faq.scss',
 })
 export class Faq {
 
