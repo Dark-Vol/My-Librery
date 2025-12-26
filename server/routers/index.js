@@ -1,15 +1,16 @@
-const express = require('express');
-const router = express.Router();
+const Router = require("express");
+const genres = require("./genresRoutes");
+const books = require("./booksRoutes");
 
 // Базовый маршрут для проверки работы API
+const router = new Router();
 router.get('/', (req, res) => {
-  res.json({ message: 'API is working' });
+    res.send('API is working');
 });
 
-// Здесь можно добавить другие маршруты
-// Например:
-// router.use('/books', require('./books'));
-// router.use('/users', require('./users'));
+router.use("/genres", genres);
+router.use("/books", books);
 
 module.exports = router;
+
 
