@@ -1,23 +1,45 @@
-const sequelize = require('../config/db');
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = require("../config/db");
 
-// Здесь можно определить модели Sequelize
-// Например:
-// const { DataTypes } = require('sequelize');
-// 
-// const Book = sequelize.define('Book', {
-//   title: {
-//     type: DataTypes.STRING,
-//     allowNull: false
-//   },
-//   author: {
-//     type: DataTypes.STRING,
-//     allowNull: false
-//   }
-// });
+const Genre = sequelize.define("Genre", {
+    name: {
+        type: DataTypes.STRING(250),
+        allowNull: false,
+    },
+});
 
-// Экспортируйте модели, если они определены
-// module.exports = { Book };
+const Book = sequelize.define("Book", {
+    title: {
+        type: DataTypes.STRING(250),
+        allowNull: false,
+    },
+    author: {
+        type: DataTypes.STRING(250),
+        allowNull: false,
+    },
+    genreId: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    bookSeries: {
+        type: DataTypes.STRING(250),
+        allowNull: true,
+    },
+    bookNumber: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    aboutBook: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+    },
+});
 
-// Пока просто экспортируем пустой объект, чтобы не было ошибок
-module.exports = {};
+Genre.hasMany(Book, { foreignKey: "genreId" });
+Book.belongsTo(Genre, { foreignKey: "genreId" });
+
+module.exports = {
+    Genre,
+    Book
+};
 
