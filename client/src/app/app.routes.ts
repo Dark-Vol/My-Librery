@@ -3,7 +3,7 @@ import { Main } from './features/main/main'
 import { About } from './features/about/about'
 import { Contacts } from './features/contacts/contacts'
 import { Faq } from './features/faq/faq'
-import { Catalog } from './features/catalog/catalog';
+import { Catalog } from './features/catalog/page/catalog';
 
 export const routes: Routes = [
   {
